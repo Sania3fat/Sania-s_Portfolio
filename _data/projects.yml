@@ -1,6 +1,7 @@
 # _data/projects.yml
 - title: "Revenue Prediction Analysis"
   description: "Developed predictive models to forecast university revenue and enrollment trends."
+  URL: https://github.com/Sania3fat/Sania-s_Portfolio/tree/main/Dashboard
   technologies:
     - Python
     - SQL

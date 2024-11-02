@@ -1,3 +1,31 @@
-title: My GitHub Projects
-description: A collection of my GitHub projects
-remote_theme: pages-themes/minimal
+# _config.yml
+title: Your Portfolio
+description: Your portfolio description
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
+
+# Defaults for collections
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

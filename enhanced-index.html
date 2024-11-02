@@ -1,0 +1,313 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="hero-section">
+    <h1>Data Analytics Portfolio</h1>
+    <p class="lead">Business Analytics Graduate | Data Analyst | Research Associate</p>
+    <div class="hero-cta">
+      <a href="https://github.com/yourusername" class="cta-button github">View on GitHub</a>
+      <a href="/projects" class="cta-button projects">Browse All Projects</a>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>MS in Business Analytics candidate at Kent State University with a 4.0 GPA. Currently working as a Data Analyst/Research Associate, 
+         specializing in predictive modeling, data visualization, and business intelligence. My work focuses on transforming complex data 
+         into actionable insights that drive strategic decision-making.</p>
+    </div>
+  </div>
+
+  <div class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <a href="/projects" class="view-all">View All Projects →</a>
+      </div>
+      <div class="projects-grid">
+        {% for project in site.data.projects %}
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">
+                {% case project.title %}
+                  {% when "Revenue Prediction Analysis" %}
+                    📈
+                  {% when "Sales and Pricing Model" %}
+                    💰
+                  {% else %}
+                    📊
+                {% endcase %}
+              </div>
+              <h3>{{ project.title }}</h3>
+            </div>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="technologies">
+              {% for tech in project.technologies %}
+                <span class="tech-tag">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            <div class="project-links">
+              {% if project.github_url %}
+                <a href="{{ project.github_url }}" class="project-link" target="_blank">View Code</a>
+              {% endif %}
+              {% if project.demo_url %}
+                <a href="{{ project.demo_url }}" class="project-link" target="_blank">Live Demo</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="skills-section">
+    <div class="container">
+      <h2>Technical Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <span class="skill-icon">💻</span>
+          <h3>Programming & Databases</h3>
+          <ul>
+            <li>Python (Data Science)</li>
+            <li>SQL (MS SQL Server)</li>
+            <li>R Programming</li>
+            <li>MATLAB</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <span class="skill-icon">📊</span>
+          <h3>Visualization & BI</h3>
+          <ul>
+            <li>Power BI</li>
+            <li>Tableau</li>
+            <li>Data Storytelling</li>
+            <li>Dashboard Design</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <span class="skill-icon">🔍</span>
+          <h3>Analytics</h3>
+          <ul>
+            <li>Predictive Modeling</li>
+            <li>Machine Learning</li>
+            <li>Statistical Analysis</li>
+            <li>Data Mining</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .hero-section {
+    text-align: center;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin-bottom: 2rem;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: #495057;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button.github {
+    background: #24292e;
+    color: white;
+  }
+
+  .cta-button.projects {
+    background: #0366d6;
+    color: white;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .view-all {
+    color: #0366d6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .project-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .project-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-icon {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech-tag {
+    background: #f1f8ff;
+    color: #0366d6;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .project-link {
+    color: #0366d6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .project-link:hover {
+    text-decoration: underline;
+  }
+
+  .skills-section {
+    background: #f8f9fa;
+    padding: 4rem 0;
+    margin-top: 4rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+
+  .skill-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .skill-category h3 {
+    color: #212529;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skill-category li {
+    color: #495057;
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .skill-category li:before {
+    content: "▹";
+    color: #0366d6;
+    position: absolute;
+    left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 4rem 1rem;
+    }
+
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .section-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+  }
+</style>

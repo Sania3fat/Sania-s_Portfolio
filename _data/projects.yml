@@ -1,0 +1,16 @@
+# _data/projects.yml
+- title: "Revenue Prediction Analysis"
+  description: "Developed predictive models to forecast university revenue and enrollment trends."
+  technologies:
+    - Python
+    - SQL
+    - Power BI
+  date: 2024-01-01
+
+- title: "Sales and Pricing Model"
+  description: "Created dashboard for Kent Natural Food Cooperative using Tableau."
+  technologies:
+    - Tableau
+    - Python
+    - SQL
+  date: 2024-01-15

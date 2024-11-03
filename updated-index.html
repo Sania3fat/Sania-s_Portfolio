@@ -1,0 +1,114 @@
+---
+layout: default
+---
+
+<div class="home">
+  <!-- Existing hero section remains the same -->
+  <div class="hero-section">
+    <h1>Data Analytics Portfolio</h1>
+    <p class="lead">Business Analytics Graduate | Data Analyst | Research Associate</p>
+    <div class="hero-cta">
+      <a href="https://github.com/sania3fat" class="cta-button github">View on GitHub</a>
+      <a href="https://github.com/Sania3fat/Sania-s_Portfolio/tree/main" class="cta-button projects">Browse All Projects</a>
+    </div>
+  </div>
+
+  <!-- Profile section remains the same -->
+  <div class="profile-section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Business Analytics graduate student at Kent State University with a 4.0 GPA and hands-on experience in revenue forecasting and sales analytics, 
+        seeking an entry-level Data/Business Analyst position. Proven track record of delivering actionable insights using SQL, Python, R, and 
+        visualization tools (Tableau, Power BI) through multiple internships and research projects. Demonstrated ability to translate complex 
+        data analysis into clear recommendations for stakeholders.Eager to contribute to data-driven decision making while growing professionally in an 
+        analytical role.</p>
+    </div>
+  </div>
+
+  <!-- New Class Projects Section -->
+  <div class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Class Projects</h2>
+        <a href="{{ site.baseurl }}/class-projects" class="view-all">View All Class Projects →</a>
+      </div>
+      <div class="projects-grid">
+        {% for project in site.data.class_projects %}
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">📚</div>
+              <h3>{{ project.title }}</h3>
+            </div>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="technologies">
+              {% for tech in project.technologies %}
+                <span class="tech-tag">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            <div class="project-links">
+              {% if project.github_url %}
+                <a href="{{ project.github_url }}" class="project-link" target="_blank">View Code</a>
+              {% endif %}
+              {% if project.report_url %}
+                <a href="{{ project.report_url }}" class="project-link" target="_blank">View Report</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Projects Section -->
+  <div class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <a href="/Sania-s_Portfolio" class="view-all">View All Projects →</a>
+      </div>
+      <div class="projects-grid">
+        {% for project in site.data.projects %}
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">
+                {% case project.title %}
+                  {% when "Revenue Prediction Analysis" %}
+                    📈
+                  {% when "Sales and Pricing Model" %}
+                    💰
+                  {% else %}
+                    📊
+                {% endcase %}
+              </div>
+              <h3>{{ project.title }}</h3>
+            </div>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="technologies">
+              {% for tech in project.technologies %}
+                <span class="tech-tag">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            <div class="project-links">
+              {% if project.github_url %}
+                <a href="{{ project.github_url }}" class="project-link" target="_blank">View Code</a>
+              {% endif %}
+              {% if project.demo_url %}
+                <a href="{{ project.demo_url }}" class="project-link" target="_blank">Live Demo</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills section remains the same -->
+  <div class="skills-section">
+    <!-- ... rest of the skills section content ... -->
+  </div>
+</div>
+
+<!-- Existing styles remain the same -->
+<style>
+  /* All existing styles remain unchanged */
+</style>

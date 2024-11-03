@@ -1,6 +1,6 @@
 # _config.yml
-title: Your Portfolio
-description: Your portfolio description
+title: Portfolio - Sania Fatima
+description: Contains code and documents related to projects done in class and as a data/business analyst
 
 # Build settings
 markdown: kramdown

@@ -17,3 +17,16 @@
     - Python
     - SQL
   date: 2024-01-15
+
+- title: "Revenue Prediction Analysis"
+  description: "Developed predictive models to forecast university revenue and enrollment trends."
+  technologies:
+    - Python
+    - SQL
+    - Power BI
+  date: 2024-01-01
+  achievements:
+    - "Predicted Fall 2024 enrollment of 29,857 students"
+    - "Identified trends leading to 5% increase in retention"
+    - "Observed 7% rise in admissions"
+  github_url: "https://github.com/Sania3fat/Sania-s_Portfolio/tree/main/Dashboard"

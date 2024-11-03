@@ -1,31 +1,52 @@
-# _config.yml
-title: Portfolio - Sania Fatima
-description: Contains code and documents related to projects done in class and as a data/business analyst
+# Basic Site Settings
+title: Sania's Portfolio
+description: Data Analytics Portfolio showcasing projects and skills
+baseurl: "/Sania-s_Portfolio"
+url: "https://sania3fat.github.io"
+
+# Author Information
+author:
+  name: Sania Fatima
+  title: Business Analytics Graduate | Data Analyst
+  email: sfatima3@kent.edu
+  github: sania3fat
 
 # Build settings
 markdown: kramdown
-theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Collections
 collections:
-  projects:
+  class_projects:
     output: true
-    permalink: /projects/:title/
+    permalink: /class-projects/:name
 
-# Defaults for collections
+# Default Settings
 defaults:
   - scope:
       path: ""
-      type: "projects"
+      type: "class_projects"
     values:
       layout: "project"
 
-# Exclude from processing
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Class Projects
+    url: /class-projects
+  - title: Featured Projects
+    url: /projects
+  - title: About
+    url: /about
+
+# Exclude files from processing
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor
+  - .gitignore
+  - README.md

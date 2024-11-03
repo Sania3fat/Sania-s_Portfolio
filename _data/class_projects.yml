@@ -1,0 +1,12 @@
+# _data/class_projects.yml
+- title: "Project 1"
+  description: "Description of your class project"
+  technologies: ["Python", "SQL", "Tableau"]
+  github_url: "https://github.com/yourusername/project1"
+  report_url: "link-to-report"
+
+- title: "Project 2"
+  description: "Description of another class project"
+  technologies: ["R", "Power BI"]
+  github_url: "https://github.com/yourusername/project2"
+  report_url: "link-to-report"

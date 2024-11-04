@@ -1,6 +1,6 @@
 # Basic Site Settings
 title: Sania's Portfolio
-description: Data Analytics Portfolio showcasing projects and skills
+description: Data Analytics Portfolio showcasing academic and professional projects
 baseurl: "/Sania-s_Portfolio"
 url: "https://sania3fat.github.io"
 
@@ -10,6 +10,7 @@ author:
   title: Business Analytics Graduate | Data Analyst
   email: sfatima3@kent.edu
   github: sania3fat
+  linkedin: "https://www.linkedin.com/in/sania-fatima-a1a732277/"
 
 # Build settings
 markdown: kramdown
@@ -19,12 +20,20 @@ plugins:
 
 # Collections
 collections:
+  featured_projects:
+    output: true
+    permalink: /projects/:name
   class_projects:
     output: true
     permalink: /class-projects/:name
 
-# Default Settings
+# Default Settings for Collections
 defaults:
+  - scope:
+      path: ""
+      type: "featured_projects"
+    values:
+      layout: "project"
   - scope:
       path: ""
       type: "class_projects"
@@ -42,6 +51,32 @@ navigation:
   - title: About
     url: /about
 
+# Project Categories
+project_categories:
+  - data-analysis
+  - machine-learning
+  - visualization
+  - database
+  - statistics
+
+# Technologies
+technologies:
+  programming:
+    - Python
+    - R
+    - SQL
+    - MATLAB
+  visualization:
+    - Tableau
+    - Power BI
+    - ggplot2
+    - matplotlib
+  tools:
+    - Git
+    - MS SQL Server
+    - Jupyter Notebook
+    - RStudio
+
 # Exclude files from processing
 exclude:
   - Gemfile
@@ -50,3 +85,4 @@ exclude:
   - vendor
   - .gitignore
   - README.md
+  - CHANGELOG.md

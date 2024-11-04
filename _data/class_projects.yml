@@ -1,12 +1,35 @@
-# _data/class_projects.yml
-- title: "Project 1"
-  description: "Description of your class project"
-  technologies: ["Python", "SQL", "Tableau"]
-  github_url: "https://github.com/sania3fat/"
-  report_url: "http://www.kent.edu"
+- title: "Data Mining Project"
+  description: "Applied data mining techniques to analyze customer behavior patterns"
+  type: "data-mining"
+  technologies: 
+    - Python
+    - Scikit-learn
+    - Pandas
+  github_url: "https://github.com/sania3fat/data-mining-project"
+  report_url: "/class-projects/data-mining-project/report.pdf"
+  course: "Advanced Data Mining"
+  semester: "Fall 2023"
 
-- title: "Project 2"
-  description: "Description of another class project"
-  technologies: ["R", "Power BI"]
-  github_url: "https://github.com/yourusername/project2"
-  report_url: "link-to-report"
+- title: "Statistical Analysis"
+  description: "Statistical analysis of market trends using R"
+  type: "statistics"
+  technologies:
+    - R
+    - ggplot2
+    - tidyverse
+  github_url: "https://github.com/sania3fat/statistical-analysis"
+  report_url: "/class-projects/statistical-analysis/report.pdf"
+  course: "Applied Statistics"
+  semester: "Spring 2024"
+
+- title: "Database Management"
+  description: "Designed and implemented a database system for inventory management"
+  type: "database"
+  technologies:
+    - SQL
+    - MySQL
+    - ERD
+  github_url: "https://github.com/sania3fat/database-project"
+  report_url: "/class-projects/database-project/report.pdf"
+  course: "Database Systems"
+  semester: "Fall 2023"

@@ -18,38 +18,24 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+
 # Collections
 collections:
-  featured_projects:
+  projects:
     output: true
-    permalink: /projects/:name
-  class_projects:
-    output: true
-    permalink: /class-projects/:name
+    permalink: /projects/:path/
 
 # Default Settings for Collections
 defaults:
   - scope:
-      path: ""
-      type: "featured_projects"
+      path: "_projects/featured"
     values:
-      layout: "project"
+      type: "featured"
   - scope:
-      path: ""
-      type: "class_projects"
+      path: "_projects/class"
     values:
-      layout: "project"
+      type: "class"
 
-# Navigation
-navigation:
-  - title: Home
-    url: /
-  - title: Projects
-    url: /projects
-  - title: Class Projects
-    url: /class-projects
-  - title: About
-    url: /about
 
 # Project Categories
 project_categories:

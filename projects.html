@@ -1,53 +1,58 @@
+Certainly! Below is your HTML code converted into a format that Jekyll understands, specifically using Liquid templating. I'll maintain the structure you provided while ensuring it's compatible with Jekyll:
+
+```markdown
 ---
 layout: default
 title: Featured Projects
 permalink: /projects/
 ---
 
-::::::::::: projects-section
-:::::::::: container
-::: section-header
-## Featured Projects
-:::
-
-:::::::: projects-grid
-{% assign sorted_projects = site.featured_projects | sort: "date" | reverse %}
-{% for project in sorted_projects %}
-
-::::::: project-card
-:::: project-header
-::: project-icon
-{% case project.category %}
-  {% when "data-analysis" %}📈
-  {% when "machine-learning" %}🤖
-  {% when "visualization" %}📊
-  {% when "database" %}💾
-  {% else %}📚
-{% endcase %}
-:::
-
-### {{ project.title }}
-::::
-
-{{ project.description }}
-
-::: technologies
-{% for tech in project.technologies limit:4 %}
-[{{ tech }}]{.tech-tag}
-{% endfor %}
-:::
-
-::: project-links
-{% if project.github_url %}
-[[📂]{.link-icon}View Code]({{ project.github_url }}){.project-link target="_blank"}
-{% endif %}
-{% if project.demo_url %}
-[[🔗]{.link-icon}Live Demo]({{ project.demo_url }}){.project-link target="_blank"}
-{% endif %}
-:::
-:::::::
-
-{% endfor %}
-::::::::
-::::::::::
-:::::::::::
+<div class="projects-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+    </div>
+    <div class="projects-grid">
+      {% assign sorted_projects = site.featured_projects | sort: "date" | reverse %}
+      {% for project in sorted_projects %}
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">
+            {% case project.category %}
+              {% when "data-analysis" %}
+                📈
+              {% when "machine-learning" %}
+                🤖
+              {% when "visualization" %}
+                📊
+              {% when "database" %}
+                💾
+              {% else %}
+                📚
+            {% endcase %}
+          </div>
+          <h3>{{ project.title }}</h3>
+        </div>
+        <p>{{ project.description }}</p>
+        <div class="technologies">
+          {% for tech in project.technologies limit:4 %}
+            <span class="tech-tag">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        <div class="project-links">
+          {% if project.github_url %}
+            <a class="project-link" href="{{ project.github_url }}" target="_blank">
+              <span class="link-icon">📂</span> View Code
+            </a>
+          {% endif %}
+          {% if project.demo_url %}
+            <a class="project-link" href="{{ project.demo_url }}" target="_blank">
+              <span class="link-icon">🔗</span> Live Demo
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+---
+layout: default
+title: Class Projects
+permalink: /class-projects/
+---
+
+::::::::::: projects-section
+:::::::::: container
+::: section-header
+## Class Projects
+:::
+
+:::::::: projects-grid
+{% assign sorted_class_projects = site.class_projects | sort: "semester" | reverse %}
+{% for project in sorted_class_projects %}
+
+::::::: project-card
+:::: project-header
+::: project-icon
+{% case project.type %}
+  {% when "data-mining" %}🔍
+  {% when "statistics" %}📊
+  {% when "database" %}💾
+  {% else %}📚
+{% endcase %}
+:::
+
+### {{ project.title }}
+::::
+
+{{ project.description }}
+
+::: technologies
+{% for tech in project.technologies %}
+[{{ tech }}]{.tech-tag}
+{% endfor %}
+:::
+
+::: project-links
+{% if project.github_url %}
+[[📂]{.link-icon}View Code]({{ project.github_url }}){.project-link target="_blank"}
+{% endif %}
+{% if project.report_url %}
+[[📄]{.link-icon}View Report]({{ project.report_url }}){.project-link target="_blank"}
+{% endif %}
+:::
+
+::: project-meta
+<span class="course">{{ project.course }}</span>
+<span class="semester">{{ project.semester }}</span>
+:::
+:::::::
+
+{% endfor %}
+::::::::
+::::::::::
+:::::::::::

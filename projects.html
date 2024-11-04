@@ -1,0 +1,53 @@
+---
+layout: default
+title: Featured Projects
+permalink: /projects/
+---
+
+::::::::::: projects-section
+:::::::::: container
+::: section-header
+## Featured Projects
+:::
+
+:::::::: projects-grid
+{% assign sorted_projects = site.featured_projects | sort: "date" | reverse %}
+{% for project in sorted_projects %}
+
+::::::: project-card
+:::: project-header
+::: project-icon
+{% case project.category %}
+  {% when "data-analysis" %}📈
+  {% when "machine-learning" %}🤖
+  {% when "visualization" %}📊
+  {% when "database" %}💾
+  {% else %}📚
+{% endcase %}
+:::
+
+### {{ project.title }}
+::::
+
+{{ project.description }}
+
+::: technologies
+{% for tech in project.technologies limit:4 %}
+[{{ tech }}]{.tech-tag}
+{% endfor %}
+:::
+
+::: project-links
+{% if project.github_url %}
+[[📂]{.link-icon}View Code]({{ project.github_url }}){.project-link target="_blank"}
+{% endif %}
+{% if project.demo_url %}
+[[🔗]{.link-icon}Live Demo]({{ project.demo_url }}){.project-link target="_blank"}
+{% endif %}
+:::
+:::::::
+
+{% endfor %}
+::::::::
+::::::::::
+:::::::::::

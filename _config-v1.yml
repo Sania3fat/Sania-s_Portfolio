@@ -44,10 +44,10 @@ defaults:
 navigation:
   - title: Home
     url: /
-  - title: Projects
-    url: /projects
   - title: Class Projects
     url: /class-projects
+  - title: Featured Projects
+    url: /projects
   - title: About
     url: /about
 
@@ -58,3 +58,31 @@ project_categories:
   - visualization
   - database
   - statistics
+
+# Technologies
+technologies:
+  programming:
+    - Python
+    - R
+    - SQL
+    - MATLAB
+  visualization:
+    - Tableau
+    - Power BI
+    - ggplot2
+    - matplotlib
+  tools:
+    - Git
+    - MS SQL Server
+    - Jupyter Notebook
+    - RStudio
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md
+  - CHANGELOG.md

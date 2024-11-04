@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="site-nav">
+                <a href="{{ site.baseurl }}/" class="site-title">{{ site.title }}</a>
+                <div class="nav-links">
+                    {% for item in site.navigation %}
+                    <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link">{{ item.title }}</a>
+                    {% endfor %}
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-content">
+        {{ content }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
+                <div class="social-links">
+                    {% if site.author.github %}
+                    <a href="https://github.com/{{ site.author.github }}" target="_blank">GitHub</a>
+                    {% endif %}
+                    {% if site.author.linkedin %}
+                    <a href="{{ site.author.linkedin }}" target="_blank">LinkedIn</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

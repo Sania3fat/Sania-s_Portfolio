@@ -2,7 +2,10 @@
 - title: "Revenue Prediction Analysis"
   description: "Developed predictive models to forecast university revenue and enrollment trends."
   URL: https://github.com/Sania3fat/Sania-s_Portfolio/tree/main/Dashboard
+  type: "machine-learning"
   github_url: https://github.com/Sania3fat/Sania-s_Portfolio/tree/main/Dashboard
+  demo_url: "/projects/revenue-prediction"
+  image: "revenue-prediction.jpg"
   technologies:
     - Python
     - SQL
